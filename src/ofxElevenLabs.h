@@ -183,12 +183,12 @@ public:
 	ofParameter<void> vRestart{ "Restart"};
 	ofParameter<void> vResend{ "Resend"};
 
-private:
 	ofParameter<bool> bModeUseCustomServer{ "CustomServer", 0 };
 	// Enable to use your custom alternative server,
 	// instead of the official ElevenLabs servers.
 	// (maybe cheaper or to not spend credits or maybe an alternative TTS platform) 
 
+private:
 	ofParameter<string> voiceId{ "voiceID", "" };
 	vector<string> voicesIds = { "pNInz6obpgDQGcFmaJgB", "ErXwobaYiN019PkySvjV", "VR6AewLTigWG4xSOukaG", "EXAVITQu4vr4xnSDxMaL", "TxGEqnHWrfWFTfGW9XjX", "21m00Tcm4TlvDq8ikWAM", "AZnzlk1XvdvUeBnXmlld", "MF3mGyEYCl7XYWbV9V6O", "yoZ06aMxZJJ28mfd3POQ" };
 
