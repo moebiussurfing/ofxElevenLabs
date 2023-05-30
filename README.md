@@ -38,7 +38,7 @@ ofxElevenLabs tts;
 ```.cpp
 void ofApp::draw()
 {
-	tts.drawDebugHelp(); // optional
+  tts.drawDebugHelp(); // optional
 }
 
 void ofApp::keyPressed(int key)
