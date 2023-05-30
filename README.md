@@ -22,17 +22,17 @@ The most realistic and versatile AI speech software, ever. Eleven brings the mos
   (_Currently, a free account has a limitation of 10.000 characters per month. Paid accounts start at 5$ / month._)
 - Create your example project with the **OF PROJECT GENERATOR**.
 - Build. After the first app session, two **JSON** files will be created.
-- Edit the `\example\bin\data\ofxElevenLabs_Server.json` file and set your `apiKey` from your [ElevenLabs profile](https://beta.elevenlabs.io/speech-synthesis).
+  - Edit the `\example\bin\data\ofxElevenLabs_Server.json` file and set your `apiKey` from your [ElevenLabs profile](https://beta.elevenlabs.io/speech-synthesis).
 
 ## USAGE
 
-### ofApp.h
+#### ofApp.h
 ```.cpp
 #include "ofxElevenLabs.h"
 ofxElevenLabs tts;
 ``` 
 
-### ofApp.cpp
+#### ofApp.cpp
 ```.cpp
 void ofApp::draw()
 {
