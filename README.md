@@ -5,8 +5,8 @@ An [openFrameworks](https://openframeworks.cc/) (C++) addon for the
 [ElevenLabs](https://beta.elevenlabs.io/) **Text-to-Speech API**.
 
 > **Prime Voice AI**.  
-The most realistic and versatile AI speech software, ever. Eleven brings the most compelling, rich and lifelike voices to creators and publishers seeking the ultimate tools for storytelling.  
-> ElevenLabs offer high-quality pre-made voices, a Voice Design feature that allows you to create unique voices, and a cloning feature for replicating existing voices.
+The most realistic and versatile **AI speech software**, ever. Eleven brings the most compelling, rich and lifelike voices to creators and publishers seeking the ultimate tools for storytelling.  
+> **ElevenLabs** offer high-quality pre-made voices, a **Voice Design feature** that allows you to create unique voices, and a cloning feature for replicating existing voices.
 
 ## SCREENSHOT
 
@@ -31,7 +31,7 @@ The most realistic and versatile AI speech software, ever. Eleven brings the mos
 #include "ofxElevenLabs.h"
 
 ofxElevenLabs tts;
-``` UI 
+```
 
 #### ofApp.cpp
 ```.cpp
