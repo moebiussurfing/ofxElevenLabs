@@ -4,7 +4,7 @@ ofxElevenLabs
 An [openFrameworks](https://openframeworks.cc/) (C++) addon for the 
 [ElevenLabs](https://beta.elevenlabs.io/) **Text-to-Speech API**.
 
-> Prime Voice AI.  
+> **Prime Voice AI**.  
 The most realistic and versatile AI speech software, ever. Eleven brings the most compelling, rich and lifelike voices to creators and publishers seeking the ultimate tools for storytelling.  
 > ElevenLabs offer high-quality pre-made voices, a Voice Design feature that allows you to create unique voices, and a cloning feature for replicating existing voices.
 
@@ -14,14 +14,14 @@ The most realistic and versatile AI speech software, ever. Eleven brings the mos
 
 ## FEATURES
 - Simple `threading` to not block the drawing.
-- Exposed and persistent `ofParameter` settings.
+- UI exposed and persistent `ofParameter` settings.
 - Bundled Testing sentences workflow.
 
 ## IMPORTANT
 - Sign-Up a free [ElevenLabs](https://beta.elevenlabs.io/sign-up) account before start.  
-  - (_Currently, a free account has a limitation of 10.000 characters per month. Paid accounts start at 5$ / month._)
+  - _Currently, a free account has a limitation of 10.000 characters per month. Paid accounts start at 5$ / month._
 - Create your example project with the **OF PROJECT GENERATOR**.
-- Build. After the first app session, two **JSON** files will be created.
+- **Build**. After the first app session, two **JSON** files will be created.
   - Edit the `\example\bin\data\ofxElevenLabs_Server.json` file and set your `apiKey` from your [ElevenLabs profile](https://beta.elevenlabs.io/speech-synthesis).
 
 ## USAGE
@@ -29,8 +29,9 @@ The most realistic and versatile AI speech software, ever. Eleven brings the mos
 #### ofApp.h
 ```.cpp
 #include "ofxElevenLabs.h"
+
 ofxElevenLabs tts;
-``` 
+``` UI 
 
 #### ofApp.cpp
 ```.cpp
