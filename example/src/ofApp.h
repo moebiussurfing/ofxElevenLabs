@@ -6,13 +6,15 @@
 
 class ofApp : public ofBaseApp {
 public:
-	ofxElevenLabs tts;
-
-	ofxPanel gui;
-	float v = 0;
 
 	void setup();
 	void draw();
 	void drawBg();
 	void keyPressed(int key);
+	
+	ofxElevenLabs tts;
+
+	ofxPanel gui;
+	float v = 0;
+
 };
