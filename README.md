@@ -8,7 +8,7 @@ An [openFrameworks](https://openframeworks.cc/) addon for the
 
 > Prime Voice AI.  
 The most realistic and versatile AI speech software, ever. Eleven brings the most compelling, rich and lifelike voices to creators and publishers seeking the ultimate tools for storytelling.  
-> ElevenLabs offer high-quality pre-made voices, a Voice Design feature that allows you to create unique voices, and a cloning feature for replicating existing voices. When generating content on our paid plans, you get commercial rights to use that content. If you are on the free plan, you can use the content non-commercially with attribution. If you use a cloned voice, it is necessary to obtain the appropriate permission to use them commercially, even on a paid plan. Read more here.
+> ElevenLabs offer high-quality pre-made voices, a Voice Design feature that allows you to create unique voices, and a cloning feature for replicating existing voices.
 
 ## SCREENSHOT
 
