@@ -48,7 +48,7 @@ void ofApp::keyPressed(int key)
 ```
 
 ## DEPENDENCIES
-* **ofxGui**. Only for the example.  
+* **ofxGui**. (OF core) Only for the example.  
 
 ## TESTED SYSTEMS
 - **Windows 10** / **Visual Studio 2022** / **OF ~0.11.2**
