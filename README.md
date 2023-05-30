@@ -1,8 +1,6 @@
 ofxElevenLabs
 =============
 
-# OVERVIEW
-
 An [openFrameworks](https://openframeworks.cc/) addon for the 
 [ElevenLabs](https://beta.elevenlabs.io/) **Text-to-Speech API**.
 
