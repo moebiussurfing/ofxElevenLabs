@@ -1,7 +1,7 @@
 ofxElevenLabs
 =============
 
-An [openFrameworks](https://openframeworks.cc/) (c++) addon for the 
+An [openFrameworks](https://openframeworks.cc/) (C++) addon for the 
 [ElevenLabs](https://beta.elevenlabs.io/) **Text-to-Speech API**.
 
 > Prime Voice AI.  
