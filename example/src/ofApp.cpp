@@ -21,9 +21,10 @@ void ofApp::draw()
 
 void ofApp::drawBg()
 {
-	// Blink dark if stand by.
-	// Blink blue if waiting reply. 
-	// Blink red if received error. 
+	// Blinks:
+	// Dark if stand by.
+	// Blue if waiting reply. 
+	// Red if received error. 
 	ofColor c;
 	float v = glm::cos(10 * ofGetElapsedTimef());
 	float a1 = ofMap(v, -1, 1, 100, 200, true);

@@ -6,7 +6,6 @@
 
 class ofApp : public ofBaseApp {
 public:
-
 	void setup();
 	void draw();
 	void drawBg();
@@ -16,5 +15,4 @@ public:
 
 	ofxPanel gui;
 	float v = 0;
-
 };
