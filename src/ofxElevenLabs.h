@@ -6,10 +6,11 @@
 // 10.000 characters per month.
 // Paid accounts start at 5$ / month.
 
-#define USE_TTF_CUSTOM_SERVER
-// Allows alternate between the two servers. 
-// To administrate credits or when server downs as backup maybe..
-// endpoint can be settled on the ofxElevenLabs_Server.json file.
+#define USE_TTF_ALT_SERVER
+// Allows alternate between the two servers:
+// The official server and another alternative server aka custom server. 
+// Useful to administrate credits or when server downs as backup one maybe..
+// endpoint for that alternative server can be settled on the ofxElevenLabs_Server.json file.
 
 //--
 
@@ -86,11 +87,12 @@ public:
 	{
 		ofLogNotice("ofxElevenLabs") << "Destructor";
 
-		//TODO:
-		// Join the thread to ensure that it is properly cleaned up
-		if (m_thread.joinable()) {
-			m_thread.join();
-		}
+		//crashes
+		////TODO:
+		//// Join the thread to ensure that it is properly cleaned up
+		//if (m_thread.joinable()) {
+		//	m_thread.join();
+		//}
 
 		exit();
 	}
@@ -111,10 +113,10 @@ private:
 
 		params.add(bEnable);
 
-#if defined(USE_TTF_CUSTOM_SERVER) && defined(USE_TTF_ELEVEN_LABS)
-		params.add(bModeUseCustomServer);
+#if defined(USE_TTF_ALT_SERVER) && defined(USE_TTF_ELEVEN_LABS)
+		params.add(bModeUseAltServer);
 #else
-		bModeUseCustomServer.setSerializable(false);
+		bModeUseAltServer.setSerializable(false);
 #endif
 		params.add(voiceIndex);
 		params.add(voiceName); // to ui display only. not in settings nor callbacks.
@@ -144,13 +146,13 @@ private:
 		doLoadSettingsUser();
 
 		//workflow
-#if defined(USE_TTF_CUSTOM_SERVER) && defined(USE_TTF_ELEVEN_LABS)
+#if defined(USE_TTF_ALT_SERVER) && defined(USE_TTF_ELEVEN_LABS)
 #else
 #ifdef USE_TTF_ELEVEN_LABS
-		bModeUseCustomServer = 0;//force
+		bModeUseAltServer = 0;//force
 #else
-#ifdef USE_TTF_CUSTOM_SERVER
-		bModeUseCustomServer = 1;//force
+#ifdef USE_TTF_ALT_SERVER
+		bModeUseAltServer = 1;//force
 #endif
 #endif
 #endif
@@ -182,9 +184,9 @@ public:
 	ofParameter<void> vReplay{ "Replay"};
 	ofParameter<void> vRestart{ "Restart"};
 	ofParameter<void> vResend{ "Resend"};
+	ofParameter<bool> bModeUseAltServer{ "AltServer", 0 };
 
 private:
-	ofParameter<bool> bModeUseCustomServer{ "CustomServer", 0 };
 	// Enable to use your custom alternative server,
 	// instead of the official ElevenLabs servers.
 	// (maybe cheaper or to not spend credits or maybe an alternative TTS platform) 
@@ -451,7 +453,7 @@ public:
 		ofLogNotice("ofxElevenLabs") << "doSend: " << text;
 
 		//TODO:
-		doCancelRequest();
+		//doCancelRequest();
 
 		m_strText = text;
 
@@ -481,7 +483,7 @@ public:
 		//TODO:
 		// Start a new thread to send the request
 		m_thread = std::thread(&ofxElevenLabs::sendRequestThreaded, this);
-		m_thread.detach();
+		m_thread.detach();//will not wait for the new thread to finish before continuing.
 	}
 
 	//TODO:
@@ -535,9 +537,9 @@ private:
 		ofHttpResponse response;
 		m_bWaiting = 1;
 
-		if (bModeUseCustomServer)
+		if (bModeUseAltServer)
 		{
-#ifdef USE_TTF_CUSTOM_SERVER
+#ifdef USE_TTF_ALT_SERVER
 			const string url = urlEndpointCustomServer;
 			const string v = voiceName.get();
 
@@ -726,7 +728,7 @@ public:
 
 	//TODO:
 	// For the custom servers.
-#ifdef USE_TTF_CUSTOM_SERVER
+#ifdef USE_TTF_ALT_SERVER
 	// To send an HTTP request to the specified URL.
 	// Custom endpoint. Requires a custom server.
 	ofHttpResponse sendRequestPostCustomServer(const std::string& url, const std::string& body) {
