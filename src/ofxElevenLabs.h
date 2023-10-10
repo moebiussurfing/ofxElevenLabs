@@ -6,7 +6,7 @@
 // 10.000 characters per month.
 // Paid accounts start at 5$ / month.
 
-#define USE_TTF_ALT_SERVER
+//#define USE_TTF_ALT_SERVER
 // Allows alternate between the two servers:
 // The official server and another alternative server aka custom server. 
 // Useful to administrate credits or when server downs as backup one maybe..
@@ -173,7 +173,8 @@ public:
 
 	ofParameter<bool> bEnable{ "Enable", 1 };
 	vector<string> voicesNames = { "Adam", "Antoni", "Arnold", "Bella", "Josh", "Rachel", "Domi", "Elli", "Sam" };
-	ofParameter<int> voiceIndex{ "VoiceIndex", 0, 0, voicesNames.size() - 1 };
+	ofParameter<int> voiceIndex{ "VoiceIndex", 0, 0, 8 };
+	//ofParameter<int> voiceIndex{ "VoiceIndex", 0, 0, voicesNames.size() - 1 };
 	ofParameter<string> voiceName{ "VoiceName", "" };//for display only
 
 	// Only implemented on ElevenLabs mode.
@@ -586,7 +587,7 @@ private:
 			m_bFlagResponseReady = 0;
 			m_bError = 1;
 
-			m_strError = "ERROR: Response not ready. \n";
+			m_strError = "ERROR: Response not ready. ";
 			m_strError += "API returned status code " + ofToString(m_httpResponse.status) + ".\n";
 
 			if (m_httpResponse.status == 404) m_strError += "404 (Not Found)";
@@ -675,7 +676,7 @@ public:
 			bMustFix_utf8 = 1;
 
 			ofLogError("ofxElevenLabs") << "Probably an UTF 8 error!";
-			ofLogError("ofxElevenLabs") << "Request is ignored to aovid exceptions!";
+			ofLogError("ofxElevenLabs") << "Request is ignored to avoid exceptions!";
 			
 			//TODO: workaround
 			// return empty and skip that send request!
